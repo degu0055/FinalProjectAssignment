@@ -15,28 +15,28 @@ https://github.com/degu0055/FinalProjectAssignment -->
 ## 3. Implementation Details:
 <!-- IoT Sensor Simulation:
 - Describe how the simulated IoT sensors generate and send data to Azure IoT Hub.
-- Include the structure of the JSON payload and any scripts or applications used. -->
+- Include the structure of the JSON payload and any scripts or applications used. 
 
 Azure IoT Hub Configuration:
-<!-- - Explain the configuration steps for setting up the IoT Hub, including endpoints and message routing. -->
+ - Explain the configuration steps for setting up the IoT Hub, including endpoints and message routing.
 
 Azure Stream Analytics Job:
-<!-- - Describe the job configuration, including input sources, query logic, and output destinations.
-- Provide sample queries used for data processing. -->
+ - Describe the job configuration, including input sources, query logic, and output destinations.
+- Provide sample queries used for data processing. 
 
 Azure Blob Storage:
-<!-- - Explain how the processed data is organized in Blob Storage (e.g., folder structure, file naming convention).
+- Explain how the processed data is organized in Blob Storage (e.g., folder structure, file naming convention).
 - Specify the formats of stored data (JSON/CSV). -->
 
 ## 4. Usage Instructions:
 <!-- Running the IoT Sensor Simulation:
-- Provide step-by-step instructions for running the simulation script or application. -->
+- Provide step-by-step instructions for running the simulation script or application. 
 
 Configuring Azure Services:
-<!-- - Describe how to set up and run the IoT Hub and Stream Analytics job. -->
+- Describe how to set up and run the IoT Hub and Stream Analytics job. 
 
 Accessing Stored Data:
-<!-- - Include steps to locate and view the processed data in Azure Blob Storage. -->
+- Include steps to locate and view the processed data in Azure Blob Storage. -->
 
 ## 5. Results:
 <!-- Highlight key findings, such as:
