@@ -1,5 +1,7 @@
 # FinalProjectAssignment
 
+<!-- Repo:
+https://github.com/degu0055/FinalProjectAssignment -->
 
 ## 1. Scenario Description:
 <!-- Provide an overview of the Rideau Canal Skateway monitoring scenario and explain the problem your solution addresses. -->
@@ -45,3 +47,13 @@ Include references to sample output files stored in Blob Storage. -->
 ## 6. Reflection:
 <!-- Discuss any challenges faced during implementation and how they were addressed. -->
 
+## IoT Sensor Simulation Code
+<!-- Include the script or application used to simulate the IoT sensors. The code should:
+- Be included in the repository under a directory such as sensor-simulation/.
+- Be well-documented with comments and clear instructions for running. -->
+
+## Screenshots
+<!-- Add a directory in the repository named screenshots/ containing:
+- Azure IoT Hub configuration screenshots.
+- Azure Stream Analytics job settings and queries.
+- Azure Blob Storage screenshots showing stored output files (processed data). -->
