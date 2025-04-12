@@ -4,7 +4,7 @@ import json  # Importing json module to handle JSON data
 from azure.iot.device import IoTHubDeviceClient, Message  # Importing necessary Azure IoT libraries
 
 # Connection string for the IoT device
-CONNECTION_STRING = "HostName=romeoIOT.azure-devices.net;DeviceId=sensor1;SharedAccessKey=poPlX1QfZkvkVj4MTgJ2cBEQV+rgJ8q51ZXEylzdBTU="
+CONNECTION_STRING = "HostName=romeoIOT.azure-devices.net;DeviceId=sensor2;SharedAccessKey=galAxhlJv5vJoopMnUvPnIhC6vHaLBNtQd9eXjcVDSw="
 
 # Function to simulate getting sensor data
 def get_sensor_data():
@@ -13,7 +13,7 @@ def get_sensor_data():
     Returns a dictionary with this data.
     """
     return {
-        "deviceId": "sensor-rideau-001",  # Device ID
+        "deviceId": "sensor-rideau-002",  # Device ID
         "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),  # Timestamp in UTC format
         "iceThicknessCm": round(random.uniform(10.0, 35.0), 1),  # Random ice thickness between 10 and 35 cm
         "airTemperatureC": round(random.uniform(-25.0, 5.0), 1),  # Random air temperature between -25 and 5°C

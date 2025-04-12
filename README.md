@@ -216,6 +216,27 @@ WHERE
 
 ```
 
+- Safe to skate 
+
+```sql
+SELECT
+    deviceId AS DeviceId,
+    AVG(airTemperatureC) AS AvgAirTemperature,
+    AVG(iceThicknessCm) AS AvgIceThickness,
+    AVG(windSpeedKmh) AS AvgWindSpeed,
+    System.Timestamp AS EventTime
+INTO
+    [output]
+FROM
+    [input]
+GROUP BY
+    deviceId, TumblingWindow(second, 60)
+HAVING
+    AVG(iceThicknessCm) >= 15 AND
+    AVG(airTemperatureC) <= 0 AND
+    AVG(windSpeedKmh) <= 25
+```
+
 **Azure Blob Storage:**
 - Folder Structure: You can define a folder pattern like output/{date}/{time}. This creates folders based on the date and time of the data.
 - File Naming Convention: Files are stored with a unique name based on the folder structure, which includes the date and time (e.g., output/2025/04/12/12/processed_data.json).
@@ -232,7 +253,7 @@ WHERE
 ✓ Configuring Azure Services:
 - Describe how to set up and run the IoT Hub and Stream Analytics job. 
 
-Accessing Stored Data:
+✓ Accessing Stored Data:
 - Include steps to locate and view the processed data in Azure Blob Storage.
 
 -->
@@ -287,6 +308,25 @@ Highlight key findings, such as:
 Include references to sample output files stored in Blob Storage. 
 
 -->
+
+```json
+{"DeviceId":"sensor-rideau-002","AvgAirTemperature":-6.872727272727274,"AvgIceThickness":17.463636363636365,"AvgWindSpeed":12.045454545454543,"EventTime":"2025-04-12T09:17:00.0000000Z"}
+{"DeviceId":"sensor-rideau-001","AvgAirTemperature":-12.491666666666667,"AvgIceThickness":21.799999999999997,"AvgWindSpeed":13.75,"EventTime":"2025-04-12T09:17:00.0000000Z"}
+{"DeviceId":"sensor-rideau-002","AvgAirTemperature":-10.333333333333332,"AvgIceThickness":16.35833333333333,"AvgWindSpeed":16.233333333333334,"EventTime":"2025-04-12T09:18:00.0000000Z"}
+{"DeviceId":"sensor-rideau-001","AvgAirTemperature":-5.199999999999999,"AvgIceThickness":24.281818181818185,"AvgWindSpeed":11.51818181818182,"EventTime":"2025-04-12T09:18:00.0000000Z"}
+{"DeviceId":"sensor-rideau-002","AvgAirTemperature":-8.418181818181818,"AvgIceThickness":22.681818181818183,"AvgWindSpeed":19.18181818181818,"EventTime":"2025-04-12T09:19:00.0000000Z"}
+{"DeviceId":"sensor-rideau-001","AvgAirTemperature":-11.181818181818183,"AvgIceThickness":23.85454545454546,"AvgWindSpeed":16.945454545454545,"EventTime":"2025-04-12T09:19:00.0000000Z"}
+{"DeviceId":"sensor-rideau-002","AvgAirTemperature":-13.008333333333335,"AvgIceThickness":21.216666666666665,"AvgWindSpeed":11.300000000000002,"EventTime":"2025-04-12T09:20:00.0000000Z"}
+{"DeviceId":"sensor-rideau-001","AvgAirTemperature":-10.025,"AvgIceThickness":23.11666666666667,"AvgWindSpeed":18.058333333333334,"EventTime":"2025-04-12T09:20:00.0000000Z"}
+{"DeviceId":"sensor-rideau-002","AvgAirTemperature":-8.509090909090908,"AvgIceThickness":23.272727272727273,"AvgWindSpeed":13.918181818181818,"EventTime":"2025-04-12T09:21:00.0000000Z"}
+{"DeviceId":"sensor-rideau-001","AvgAirTemperature":-9.799999999999999,"AvgIceThickness":24.5,"AvgWindSpeed":18.845454545454547,"EventTime":"2025-04-12T09:21:00.0000000Z"}
+{"DeviceId":"sensor-rideau-002","AvgAirTemperature":-9.418181818181818,"AvgIceThickness":21.499999999999996,"AvgWindSpeed":16.60909090909091,"EventTime":"2025-04-12T09:22:00.0000000Z"}
+{"DeviceId":"sensor-rideau-001","AvgAirTemperature":-7.4750000000000005,"AvgIceThickness":22.25833333333333,"AvgWindSpeed":17.441666666666666,"EventTime":"2025-04-12T09:22:00.0000000Z"}
+{"DeviceId":"sensor-rideau-002","AvgAirTemperature":-11.441666666666665,"AvgIceThickness":25.76666666666667,"AvgWindSpeed":16.35833333333333,"EventTime":"2025-04-12T09:23:00.0000000Z"}
+{"DeviceId":"sensor-rideau-001","AvgAirTemperature":-10.727272727272727,"AvgIceThickness":24.900000000000002,"AvgWindSpeed":17.418181818181818,"EventTime":"2025-04-12T09:23:00.0000000Z"}
+{"DeviceId":"sensor-rideau-002","AvgAirTemperature":-11.363636363636365,"AvgIceThickness":20.37272727272727,"AvgWindSpeed":16.62727272727273,"EventTime":"2025-04-12T09:24:00.0000000Z"}
+{"DeviceId":"sensor-rideau-001","AvgAirTemperature":-12.458333333333334,"AvgIceThickness":24.49166666666667,"AvgWindSpeed":16.325,"EventTime":"2025-04-12T09:24:00.0000000Z"}
+```
 
 ## 6. Reflection:
 <!-- Discuss any challenges faced during implementation and how they were addressed. -->
