@@ -72,25 +72,41 @@ JSON
 
 Python
 ```python
+import time
+import random
+import json
 from azure.iot.device import IoTHubDeviceClient, Message
-import time, random, json
 
-conn_str = "HostName=your-iot-hub.azure-devices.net;DeviceId=sensor-rideau-001;SharedAccessKey=..."
-device_client = IoTHubDeviceClient.create_from_connection_string(conn_str)
+CONNECTION_STRING = "HostName=your-iot-hub.azure-devices.net;DeviceId=sensor-rideau-001;SharedAccessKey=..."
 
-while True:
-    data = {
+def get_sensor_data():
+    return {
         "deviceId": "sensor-rideau-001",
         "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "iceThicknessCm": round(random.uniform(10.0, 35.0), 1),
         "airTemperatureC": round(random.uniform(-25.0, 5.0), 1),
         "windSpeedKmh": round(random.uniform(0.0, 30.0), 1)
     }
-    
-    msg = Message(json.dumps(data))
-    device_client.send_message(msg)
-    print("Message sent:", data)
-    time.sleep(5)
+
+def main():
+    client = IoTHubDeviceClient.create_from_connection_string(CONNECTION_STRING)
+
+    print("Sending sensor data to IoT Hub...")
+    try:
+        while True:
+            data = get_sensor_data()
+            message = Message(json.dumps(data))
+            client.send_message(message)
+            print(f"Sent message: {data}")
+            time.sleep(5)
+    except KeyboardInterrupt:
+        print("Stopped sending messages.")
+    finally:
+        client.disconnect()
+
+if __name__ == "__main__":
+    main()
+
 ```
 
 **Azure IoT Hub Configuration:**
