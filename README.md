@@ -14,6 +14,9 @@ https://github.com/ramymohamed10/CST8916-Week12-IoT-Data-Streaming
 Reference - Video
 https://brightspace.algonquincollege.com/d2l/le/content/748188/viewContent/11197686/View
 
+Submission link:
+https://brightspace.algonquincollege.com/d2l/lms/dropbox/user/folder_submit_files.d2l?db=706306&grpid=0&isprv=0&bp=0&ou=748188
+
 -->
 
 ## 1. Scenario Description:
@@ -57,7 +60,7 @@ This project models IoT sensors installed along the canal to monitor ice thickne
 
 -->
 **IoT Sensor Simulation:**
-- A Python script or a Node.js app creates random but realistic sensor readings, like ice thickness, air temperature, and wind speed, at regular intervals. It formats this data into a JSON payload and sends it to Azure IoT Hub using the Azure IoT SDK.
+- A Python script creates random but realistic sensor readings, like ice thickness, air temperature, and wind speed, at regular intervals. It formats this data into a JSON payload and sends it to Azure IoT Hub using the Azure IoT SDK.
 
 JSON
 ```json 
