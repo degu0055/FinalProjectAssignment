@@ -139,7 +139,6 @@ Input Sources
     - Serialization Format: JSON
 
 Query Logic
-The Stream Analytics job uses a SQL-like language to process incoming streaming data. Here's the sample query from your tutorial:
 
 ```sql
 SELECT
@@ -278,14 +277,21 @@ HAVING
 - Add Query
 ```sql
 SELECT
-  IoTHub.ConnectionDeviceId AS DeviceId,
-  AVG(airTemperatureC) AS AvgTemperature,
-  AVG(iceThicknessCm) AS AvgIceThickness,
-  AVG(windSpeedKmh) AS AvgWindSpeed,
-  System.Timestamp AS EventTime
-INTO [output]
-FROM [input]
-GROUP BY IoTHub.ConnectionDeviceId, TumblingWindow(second, 60)
+    deviceId AS DeviceId,
+    AVG(airTemperatureC) AS AvgAirTemperature,
+    AVG(iceThicknessCm) AS AvgIceThickness,
+    AVG(windSpeedKmh) AS AvgWindSpeed,
+    System.Timestamp AS EventTime
+INTO
+    [output]
+FROM
+    [input]
+GROUP BY
+    deviceId, TumblingWindow(second, 60)
+HAVING
+    AVG(iceThicknessCm) >= 15 AND
+    AVG(airTemperatureC) <= 0 AND
+    AVG(windSpeedKmh) <= 25
 ```
 
 **Accessing Stored Data:**
@@ -343,13 +349,24 @@ Include the script or application used to simulate the IoT sensors. The code sho
 
 ## 8. Screenshots:
 <!-- 
-
 Add a directory in the repository named screenshots/ containing:
 - Azure IoT Hub configuration screenshots.
 - Azure Stream Analytics job settings and queries.
 - Azure Blob Storage screenshots showing stored output files (processed data). 
-
 -->
+
+Azure IoT Hub
+![Azure IoT Hub](screenshots/iothub.png)
+
+Azure Stream Analytics
+![Stream 1](screenshots/steam1.png)
+![Stream 2](screenshots/steam2.png)
+![Stream 3](screenshots/steam3.png)
+
+Azure Blob Storage
+![Storage](screenshots/blob.png)
+[Generated JSON File](https://github.com/degu0055/FinalProjectAssignment/tree/main/fromBLOB)
+
 
 ## Reference:
 

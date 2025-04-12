@@ -1,0 +1,6 @@
+{"DeviceId":"sensor-rideau-002","AvgAirTemperature":-6.872727272727274,"AvgIceThickness":17.463636363636365,"AvgWindSpeed":12.045454545454543,"EventTime":"2025-04-12T09:17:00.0000000Z"}
+{"DeviceId":"sensor-rideau-001","AvgAirTemperature":-12.491666666666667,"AvgIceThickness":21.799999999999997,"AvgWindSpeed":13.75,"EventTime":"2025-04-12T09:17:00.0000000Z"}
+{"DeviceId":"sensor-rideau-002","AvgAirTemperature":-10.333333333333332,"AvgIceThickness":16.35833333333333,"AvgWindSpeed":16.233333333333334,"EventTime":"2025-04-12T09:18:00.0000000Z"}
+{"DeviceId":"sensor-rideau-001","AvgAirTemperature":-5.199999999999999,"AvgIceThickness":24.281818181818185,"AvgWindSpeed":11.51818181818182,"EventTime":"2025-04-12T09:18:00.0000000Z"}
+{"DeviceId":"sensor-rideau-002","AvgAirTemperature":-8.418181818181818,"AvgIceThickness":22.681818181818183,"AvgWindSpeed":19.18181818181818,"EventTime":"2025-04-12T09:19:00.0000000Z"}
+{"DeviceId":"sensor-rideau-001","AvgAirTemperature":-11.181818181818183,"AvgIceThickness":23.85454545454546,"AvgWindSpeed":16.945454545454545,"EventTime":"2025-04-12T09:19:00.0000000Z"}
