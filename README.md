@@ -278,8 +278,9 @@ Include references to sample output files stored in Blob Storage.
 Include the script or application used to simulate the IoT sensors. The code should:
 - Be included in the repository under a directory such as sensor-simulation/.
 - Be well-documented with comments and clear instructions for running. 
-
 -->
+[sensor-simulation folder](https://github.com/degu0055/FinalProjectAssignment/tree/main/sensor-simulation)
+
 
 ## 8. Screenshots:
 <!-- 
@@ -293,8 +294,6 @@ Add a directory in the repository named screenshots/ containing:
 
 ## Reference:
 
-- **Repository:**  
-  [CST8916 - Week 12 IoT Data Streaming (GitHub)](https://github.com/ramymohamed10/CST8916-Week12-IoT-Data-Streaming)
+[CST8916 - Week 12 IoT Data Streaming (GitHub)](https://github.com/ramymohamed10/CST8916-Week12-IoT-Data-Streaming)
 
-- **Video Lecture:**  
-  [Brightspace - IoT Data Streaming](https://brightspace.algonquincollege.com/d2l/le/content/748188/viewContent/11197686/View)
+[Brightspace - IoT Data Streaming](https://brightspace.algonquincollege.com/d2l/le/content/748188/viewContent/11197686/View)
