@@ -359,9 +359,9 @@ Azure IoT Hub
 ![Azure IoT Hub](screenshots/iothub.png)
 
 Azure Stream Analytics
-![Stream 1](screenshots/steam1.png)
-![Stream 2](screenshots/steam2.png)
-![Stream 3](screenshots/steam3.png)
+![Stream 1](screenshots/stream1.png)
+![Stream 2](screenshots/stream2.png)
+![Stream 3](screenshots/stream3.png)
 
 Azure Blob Storage
 ![Storage](screenshots/blob.png)
