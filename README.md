@@ -26,7 +26,9 @@ This project models IoT sensors installed along the canal to monitor ice thickne
 
 
 ## 3. Implementation Details:
-<!-- IoT Sensor Simulation:
+<!-- 
+
+IoT Sensor Simulation:
 - Describe how the simulated IoT sensors generate and send data to Azure IoT Hub.
 - Include the structure of the JSON payload and any scripts or applications used. 
 
@@ -39,34 +41,69 @@ Azure Stream Analytics Job:
 
 Azure Blob Storage:
 - Explain how the processed data is organized in Blob Storage (e.g., folder structure, file naming convention).
-- Specify the formats of stored data (JSON/CSV). -->
+- Specify the formats of stored data (JSON/CSV). 
+
+-->
+**IoT Sensor Simulation:**
+- A Python script or a Node.js app creates random but realistic sensor readings, like ice thickness, air temperature, and wind speed, at regular intervals. It formats this data into a JSON payload and sends it to Azure IoT Hub using the Azure IoT SDK.
+
+```json 
+{
+  "deviceId": "sensor-rideau-001",
+  "timestamp": "2025-04-12T14:30:00Z",
+  "iceThicknessCm": 28.5,
+  "airTemperatureC": -12.3,
+  "windSpeedKmh": 15.7
+}
+```
+
+**Azure IoT Hub Configuration:**
+**Azure Stream Analytics Job:**
+**Azure Blob Storage:**
+
 
 ## 4. Usage Instructions:
-<!-- Running the IoT Sensor Simulation:
+<!-- 
+
+Running the IoT Sensor Simulation:
 - Provide step-by-step instructions for running the simulation script or application. 
 
 Configuring Azure Services:
 - Describe how to set up and run the IoT Hub and Stream Analytics job. 
 
 Accessing Stored Data:
-- Include steps to locate and view the processed data in Azure Blob Storage. -->
+- Include steps to locate and view the processed data in Azure Blob Storage.
+
+-->
 
 ## 5. Results:
-<!-- Highlight key findings, such as:
+<!--
+
+Highlight key findings, such as:
 - Aggregated data outputs (e.g., average ice thickness).
 
-Include references to sample output files stored in Blob Storage. -->
+Include references to sample output files stored in Blob Storage. 
+
+-->
 
 ## 6. Reflection:
 <!-- Discuss any challenges faced during implementation and how they were addressed. -->
 
 ## 7. IoT Sensor Simulation Code
-<!-- Include the script or application used to simulate the IoT sensors. The code should:
+<!--
+
+Include the script or application used to simulate the IoT sensors. The code should:
 - Be included in the repository under a directory such as sensor-simulation/.
-- Be well-documented with comments and clear instructions for running. -->
+- Be well-documented with comments and clear instructions for running. 
+
+-->
 
 ## 8. Screenshots
-<!-- Add a directory in the repository named screenshots/ containing:
+<!-- 
+
+Add a directory in the repository named screenshots/ containing:
 - Azure IoT Hub configuration screenshots.
 - Azure Stream Analytics job settings and queries.
-- Azure Blob Storage screenshots showing stored output files (processed data). -->
+- Azure Blob Storage screenshots showing stored output files (processed data). 
+
+-->
