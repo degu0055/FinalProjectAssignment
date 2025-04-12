@@ -190,30 +190,30 @@ Sample Queries
 ```sql
 SELECT
     IoTHub.ConnectionDeviceId AS DeviceId,
-    temperature,
-    humidity,
+    airTemperatureC AS Temperature,
     System.Timestamp AS EventTime
 INTO
     [output]
 FROM
     [input]
 WHERE
-    temperature > 35
+    airTemperatureC > 0;
 ```
 
-- Count Messages Per Device Per Minute
+- Filter iceThicknessCm greater than 20
 
 ```sql
 SELECT
-    IoTHub.ConnectionDeviceId AS DeviceId,
-    COUNT(*) AS MessageCount,
-    System.Timestamp AS EventTime
-INTO
-    [output]
+    deviceId,
+    timestamp,
+    iceThicknessCm,
+    airTemperatureC,
+    windSpeedKmh
 FROM
-    [input]
-GROUP BY
-    IoTHub.ConnectionDeviceId, TumblingWindow(minute, 1)
+    sensor_data
+WHERE
+    iceThicknessCm > 20;
+
 ```
 
 **Azure Blob Storage:**
