@@ -1,16 +1,29 @@
 # FinalProjectAssignment
 
-<!-- Repo:
-https://github.com/degu0055/FinalProjectAssignment -->
+<!-- 
+
+Insturction:
+https://github.com/ramymohamed10/25W_CST8916_Final_Project_Assignment
+
+Repo:
+https://github.com/degu0055/FinalProjectAssignment 
+
+-->
 
 ## 1. Scenario Description:
 <!-- Provide an overview of the Rideau Canal Skateway monitoring scenario and explain the problem your solution addresses. -->
+
+The Rideau Canal Skateway in Ottawa is a well-loved winter destination that must ensure safety for its skaters. Since ice conditions and weather can vary rapidly, the National Capital Commission (NCC) seeks a method to track these changes in real time.
+
+This project models IoT sensors installed along the canal to monitor ice thickness, temperature, and weather conditions. The information is transmitted to Azure IoT Hub, analyzed by Azure Stream Analytics to identify hazardous situations, and stored in Azure Blob Storage for additional examination. This assists the NCC in making prompt decisions to ensure the safety of skaters.
 
 ## 2. System Architecture:
 <!-- Include a clear diagram illustrating the data flow:
 - IoT sensors pushing simulated data to Azure IoT Hub.
 - Azure Stream Analytics processing the incoming data.
 - Processed data being stored in Azure Blob Storage. -->
+![System Architecture](images/diagram1.png)
+
 
 ## 3. Implementation Details:
 <!-- IoT Sensor Simulation:
