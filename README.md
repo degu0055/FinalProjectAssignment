@@ -143,16 +143,17 @@ The Stream Analytics job uses a SQL-like language to process incoming streaming 
 
 ```sql
 SELECT
-    IoTHub.ConnectionDeviceId AS DeviceId,
-    AVG(temperature) AS AvgTemperature,
-    AVG(humidity) AS AvgHumidity,
+    deviceId AS DeviceId,
+    AVG(airTemperatureC) AS AvgAirTemperature,
+    AVG(iceThicknessCm) AS AvgIceThickness,
+    AVG(windSpeedKmh) AS AvgWindSpeed,
     System.Timestamp AS EventTime
 INTO
     [output]
 FROM
     [input]
 GROUP BY
-    IoTHub.ConnectionDeviceId, TumblingWindow(second, 60)
+    deviceId, TumblingWindow(second, 60)
 ```
 
 Query Explanation:
@@ -175,10 +176,11 @@ Output Destinations
 The output is a structured JSON file containing processed data like:
 ```json
 {
-  "DeviceId": "Sensor1",
-  "AvgTemperature": 32.45,
-  "AvgHumidity": 52.18,
-  "EventTime": "2025-04-12T14:00:00.000Z"
+  "DeviceId": "sensor-001",
+  "AvgAirTemperature": 3.5,
+  "AvgIceThickness": 12.7,
+  "AvgWindSpeed": 15.2,
+  "EventTime": "2025-04-12T14:30:00Z"
 }
 ```
 
@@ -256,8 +258,9 @@ Accessing Stored Data:
 ```sql
 SELECT
   IoTHub.ConnectionDeviceId AS DeviceId,
-  AVG(temperature) AS AvgTemperature,
-  AVG(humidity) AS AvgHumidity,
+  AVG(airTemperatureC) AS AvgTemperature,
+  AVG(iceThicknessCm) AS AvgIceThickness,
+  AVG(windSpeedKmh) AS AvgWindSpeed,
   System.Timestamp AS EventTime
 INTO [output]
 FROM [input]
