@@ -297,6 +297,10 @@ HAVING
     AVG(windSpeedKmh) <= 25
 ```
 
+- Test query
+- Save query
+- Start job
+
 **Accessing Stored Data:**
 Open Blob Service
 - Under Data storage, click Containers.
@@ -305,8 +309,7 @@ Select Your Container
 - Click the container you set in the output step (e.g., output)
 
 View Your Files
-- Browse the folders (based on the path pattern if you used one).
-- Click on a .json file to preview it.
+- Click on a .json file and download it
 
 ## 5. Results:
 <!--
@@ -337,10 +340,10 @@ Include references to sample output files stored in Blob Storage.
 {"DeviceId":"sensor-rideau-001","AvgAirTemperature":-12.458333333333334,"AvgIceThickness":24.49166666666667,"AvgWindSpeed":16.325,"EventTime":"2025-04-12T09:24:00.0000000Z"}
 ```
 
-## 6. Reflection:
+<!-- ## 6. Reflection: -->
 <!-- Discuss any challenges faced during implementation and how they were addressed. -->
 
-## 7. IoT Sensor Simulation Code:
+## 6. IoT Sensor Simulation Code:
 <!--
 
 Include the script or application used to simulate the IoT sensors. The code should:
@@ -350,14 +353,13 @@ Include the script or application used to simulate the IoT sensors. The code sho
 [sensor-simulation folder](https://github.com/degu0055/FinalProjectAssignment/tree/main/sensor-simulation)
 
 
-## 8. Screenshots:
+## 7. Screenshots:
 <!-- 
 Add a directory in the repository named screenshots/ containing:
 - Azure IoT Hub configuration screenshots.
 - Azure Stream Analytics job settings and queries.
 - Azure Blob Storage screenshots showing stored output files (processed data). 
 -->
-
 Azure IoT Hub
 ![Azure IoT Hub](screenshots/iothub.png)
 
@@ -370,6 +372,7 @@ Azure Blob Storage
 ![Storage](screenshots/blob.png)
 [Generated JSON File](https://github.com/degu0055/FinalProjectAssignment/tree/main/fromBLOB)
 
+[screenshots folder](screenshots/)
 
 ## Reference:
 
